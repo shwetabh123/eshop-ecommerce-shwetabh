@@ -44,7 +44,7 @@ const Checkout = () => {
     // http://localhost:4242/create-payment-intent
     //https://eshop-react-firebase.herokuapp.com/create-payment-intent
     // Create PaymentIntent as soon as the page loads
-    fetch("https://eshop-ecommerce-shwetabh.netlify.app/create-payment-intent", {
+    fetch("https://eshop-ecommerce-shwetabh.app.netlify.com//create-payment-intent", {
 
       method: "POST",
       headers: { "Content-Type": "application/json" },  
