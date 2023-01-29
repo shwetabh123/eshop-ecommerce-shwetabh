@@ -35,7 +35,7 @@
     "start:frontend": "react-scripts start",
     "start:backend": "nodemon server.js",
     "start": "node server",
-    "build": "node server.js",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
