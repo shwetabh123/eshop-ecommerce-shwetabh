@@ -5,9 +5,6 @@ import { FaCogs } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import styles from "./Product.module.scss";
 import { useEffect, useState } from "react";
-import { collection, deleteDoc, doc, onSnapshot, orderBy, query } from "firebase/firestore";
-import { toast } from "react-toastify";
-import { db, storage } from "../../firebase/config";
 import spinnerImg from "../../assets/spinner.jpg";
 import {
   GET_PRICE_RANGE,

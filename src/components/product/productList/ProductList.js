@@ -28,7 +28,7 @@ const ProductList = () => {
   //const [products, setProducts] = useState([]);
   //const [isLoading, setIsLoading] = useState(false);
 
-  const { data, isLoading } = useFetchCollection("products");
+  const { data } = useFetchCollection("products");
   const products = useSelector(selectProducts);
   const filteredProducts = useSelector(selectFilteredProducts);
 

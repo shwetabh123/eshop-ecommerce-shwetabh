@@ -66,7 +66,7 @@ const [isLoading, setIsLoading] = useState(false);
 
 
         getCollection();
-      }, []);
+      }, [collectionName]);
 
       return { data, isLoading };
 };

@@ -13,7 +13,7 @@ import styles from "./Orders.module.scss";
 const Orders = () => {
   const { data, isLoading } = useFetchCollection("orders");
   const orders = useSelector(selectOrderHistory);
-  const userID = useSelector(selectUserID);
+  //const userID = useSelector(selectUserID);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 

@@ -1,7 +1,6 @@
 import React from 'react'
 import resetImg from "../../assets/forgot.png"
 import { Link } from 'react-router-dom';
-import {FaGoogle} from "react-icons/fa"
 import Card from '../../components/card/Card';
 import styles from "./auth.module.scss";
 
