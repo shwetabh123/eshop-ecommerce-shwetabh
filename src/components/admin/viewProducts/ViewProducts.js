@@ -16,10 +16,10 @@ import {
 import {
   FILTER_BY_SEARCH,
   selectFilteredProducts,
-  SORT_PRODUCTS,
+  //SORT_PRODUCTS,
 } from "../../../redux/slice/filterSlice";
 import Pagination from "../../pagination/Pagination";
-import useFetchCollection from "../../../customHooks/useFetchCollection";
+//import useFetchCollection from "../../../customHooks/useFetchCollection";
 import Search from "../../search/Search";
 
 
@@ -56,6 +56,38 @@ const filteredProducts = useSelector(selectFilteredProducts);
   // }, [dispatch, data]);
 
   useEffect(() => {
+    const getProducts = async (id, imageURL) => {
+      setIsLoading(true)
+      try {
+        const productsRef=collection(db,"products");
+        const q = query(productsRef, orderBy("createdAt", "desc"));
+  
+      onSnapshot(q, (snapshot) => {
+      console.log(snapshot.docs);
+  
+      const allproducts=snapshot.docs.map((doc)=>({
+        id:doc.id,
+        ...doc.data()
+  
+      }) )
+  
+      console.log(allproducts);
+      setProducts(allproducts);
+      setIsLoading(false);
+      dispatch(STORE_PRODUCTS({
+  
+        products:allproducts,
+        
+      })
+      
+      );
+      });
+    }
+       catch (error) {
+        setIsLoading(false);
+        toast.error(error.message);
+      }
+    };
     getProducts()
   }, []);
 
@@ -63,38 +95,38 @@ const filteredProducts = useSelector(selectFilteredProducts);
     dispatch(FILTER_BY_SEARCH({ products, search }));
   }, [dispatch, products, search]);
 
-  const getProducts = async (id, imageURL) => {
-    setIsLoading(true)
-    try {
-      const productsRef=collection(db,"products");
-      const q = query(productsRef, orderBy("createdAt", "desc"));
+  // const getProducts = async (id, imageURL) => {
+  //   setIsLoading(true)
+  //   try {
+  //     const productsRef=collection(db,"products");
+  //     const q = query(productsRef, orderBy("createdAt", "desc"));
 
-    onSnapshot(q, (snapshot) => {
-    console.log(snapshot.docs);
+  //   onSnapshot(q, (snapshot) => {
+  //   console.log(snapshot.docs);
 
-    const allproducts=snapshot.docs.map((doc)=>({
-      id:doc.id,
-      ...doc.data()
+  //   const allproducts=snapshot.docs.map((doc)=>({
+  //     id:doc.id,
+  //     ...doc.data()
 
-    }) )
+  //   }) )
 
-    console.log(allproducts);
-    setProducts(allproducts);
-    setIsLoading(false);
-    dispatch(STORE_PRODUCTS({
+  //   console.log(allproducts);
+  //   setProducts(allproducts);
+  //   setIsLoading(false);
+  //   dispatch(STORE_PRODUCTS({
 
-      products:allproducts,
+  //     products:allproducts,
       
-    })
+  //   })
     
-    );
-    });
-  }
-     catch (error) {
-      setIsLoading(false);
-      toast.error(error.message);
-    }
-  };
+  //   );
+  //   });
+  // }
+  //    catch (error) {
+  //     setIsLoading(false);
+  //     toast.error(error.message);
+  //   }
+  // };
 
   const confirmDelete = (id, imageURL) => {
     Notiflix.Confirm.show(

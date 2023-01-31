@@ -40,7 +40,7 @@ const useFetchDocument = (collectionName, documentID) => {
     };
 
     getDocument();
-  }, []);
+  }, [collectionName,documentID]);
 
   return { document };
 };
