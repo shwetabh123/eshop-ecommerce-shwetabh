@@ -44,7 +44,7 @@
       "react-app",
       "react-app/jest"
     ],
-    "plugin":"react/recommended",
+  
     "rules": {
       "react/jsx-uses-react": "error",   
        "react/jsx-uses-vars": "error" 
