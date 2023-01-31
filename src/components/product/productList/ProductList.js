@@ -5,11 +5,8 @@ import { BsFillGridFill } from "react-icons/bs";
 import { FaListAlt } from "react-icons/fa";
 import Search from '../../search/Search';
 import ProductItem from '../productItem/ProductItem';
-import { collection, deleteDoc, doc, onSnapshot, orderBy, query } from "firebase/firestore";
 import { useDispatch, useSelector } from "react-redux";
-import { toast } from "react-toastify";
 import Pagination from "../../pagination/Pagination";
-import { db, storage } from "../../../firebase/config";
 import {
   FILTER_BY_SEARCH,
   selectFilteredProducts,
