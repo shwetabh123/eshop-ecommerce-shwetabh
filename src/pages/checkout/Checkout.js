@@ -44,8 +44,10 @@ const Checkout = () => {
     // http://localhost:4242/create-payment-intent
     //https://eshop-react-firebase.herokuapp.com/create-payment-intent
     // Create PaymentIntent as soon as the page loads
-    fetch("https://eshop-ecommerce-shwetabh.netlify.app/create-payment-intent", {
-  //    fetch("http://localhost:4242/create-payment-intent", {
+  //  fetch("https://onlinedmart.com/create-payment-intent",
+    fetch("https://eshop-ecommerce-shwetabh.netlify.app/create-payment-intent",
+     {
+    //  fetch("http://localhost:4242/create-payment-intent", {
      
      method: "POST",
       headers: { "Content-Type": "application/json" },  
@@ -55,16 +57,19 @@ const Checkout = () => {
         shipping: shippingAddress,
         billing: billingAddress,
         description,
-      }),
+      }), 
     })
       .then((res) => {
         if (res.ok) {
           return res.json();
         }
+        // const json = await res.json();
+        // return await Promise.reject(json);
+
         return res.json().then((json) => Promise.reject(json));
       })
       .then((data) => {
-        setClientSecret(data.clientSecret);
+        setClientSecret(data.clientSecret)
       })
       .catch((error) => {
         setMessage("Failed to initialize checkout");

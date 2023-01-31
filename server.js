@@ -19,14 +19,14 @@ const path = require("path");
 //   }
 //   callback(null, corsOptions) // callback expects two parameters: error and options
 // }
-
-
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("build"));
   app.get("*", (req, res) => {
     res.sendFile(path.resolve(__dirname, "build", "index.html"));
   });
 }
+
+
 
 app.get("/", (req, res) => {
   res.send("Welcome to eShop website.");
@@ -53,7 +53,7 @@ app.post("/create-payment-intent", async (req, res) => {
   // Create a PaymentIntent with the order amount and currency
   const paymentIntent = await stripe.paymentIntents.create({
     amount: calculateOrderAmount(items),
-    currency: "inr",
+    currency: "usd",
     automatic_payment_methods: {
       enabled: true,
     },
