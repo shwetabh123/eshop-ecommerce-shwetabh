@@ -31,7 +31,7 @@ const logo = (
 const activeLink = ({ isActive }) => (isActive ? `${styles.active}` : "");
 
 const Header = () => {
-  const [showMenu, setShowMenu] = useState(false);
+ // const [showMenu, setShowMenu] = useState(false);
   const [displayName, setdisplayName] = useState("");
   const [scrollPage, setScrollPage] = useState(false);
   const cartTotalQuantity = useSelector(selectCartTotalQuantity);
