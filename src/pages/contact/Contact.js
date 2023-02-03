@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import Card from "../../components/card/Card";
 import styles from "./Contact.module.scss";
-import { FaPhoneAlt, FaEnvelope, FaTwitter } from "react-icons/fa";
+import { FaPhoneAlt, FaEnvelope, FaTwitter,FaLinkedinIn } from "react-icons/fa";
 import { GoLocation } from "react-icons/go";
 import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
@@ -72,7 +72,7 @@ const Contact = () => {
               <div className={styles.icons}>
                 <span>
                   <FaPhoneAlt />
-                  <p>+234 705 141 6545</p>
+                  <p>+91 7019048203</p>
                 </span>
                 <span>
                   <FaEnvelope />
@@ -80,11 +80,11 @@ const Contact = () => {
                 </span>
                 <span>
                   <GoLocation />
-                  <p>Abuja, Nigeria</p>
+                  <p>Bangalore, Karnataka</p>
                 </span>
                 <span>
-                  <FaTwitter />
-                  <p>@ZinoTrust</p>
+                  <FaLinkedinIn/>
+                  <p>shwetabh-srivastava-529a3826</p>
                 </span>
               </div>
             </Card>
