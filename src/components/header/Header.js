@@ -136,6 +136,21 @@ const Header = () => {
                   Contact Us
                 </NavLink>
               </li>
+              <li>
+                <NavLink to="/cancellationrefund" className={activeLink}>
+                Cancellation & refund
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/termsofservice" className={activeLink}>
+                Terms of service
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/privacypolicy" className={activeLink}>
+                Privacy Policy
+                </NavLink>
+              </li>
             </ul>
           <div className={styles["header-right"]}>
 
