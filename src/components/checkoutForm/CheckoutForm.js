@@ -90,9 +90,9 @@ const CheckoutForm = () => {
         elements,
         confirmParams: {
           // Make sure to change this to your payment completion page
-          return_url: "http://localhost:3000/checkout-success",
+         // return_url: "http://localhost:3000/checkout-success",
         //  return_url: "eshop-ecommerce-shwetabh.netlify.app/checkout-success",
-        // return_url: "https://onlinedmart.com/checkout-success",
+         return_url: "https://onlinedmart.com/checkout-success",
         },
         redirect: "if_required",
       })
