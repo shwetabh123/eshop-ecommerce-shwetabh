@@ -54,8 +54,10 @@ app.post("/create-payment-intent", async (req, res) => {
   const paymentIntent = await stripe.paymentIntents.create({
     amount: calculateOrderAmount(items),
     currency: "inr",
-    automatic_payment_methods: {
-      enabled: true,
+   //payment_method_types:[],
+     automatic_payment_methods: {
+       enabled: true,
+      
     },
     description,
     shipping: {
