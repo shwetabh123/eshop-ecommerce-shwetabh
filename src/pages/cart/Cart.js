@@ -156,8 +156,7 @@ export const Cart = () => {
     <p>Tax an shipping calculated at checkout</p>
     <button
       className="--btn --btn-primary --btn-block"
-      onClick={checkout}
-    >
+      onClick={checkout}>
       Checkout
     </button>
   </Card>

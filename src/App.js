@@ -18,6 +18,9 @@ import OrderHistory from './pages/orderHistory/OrderHistory';
 import OrderDetails from './components/admin/orderDetails/OrderDetails';
 import ReviewProducts from "./components/reviewProducts/ReviewProducts";
 import NotFound from "./pages/notFound/NotFound";
+import Cancellationrefund from './pages/cancellationrefund/Cancellationrefund';
+import Termsofservice from './pages/termsofservice/Termsofservice';
+import Privacypolicy from './pages/privacypolicy/Privacypolicy';
 
 // import AdminOnlyRoute from "./components/adminOnlyRoute/AdminOnlyRoute";
 // import ProductDetails from "./components/product/productDetails/ProductDetails";
@@ -39,6 +42,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact/>} />
+        <Route path="/cancellationrefund" element={<Cancellationrefund/>} />
+        <Route path="/termsofservice" element={<Termsofservice/>} />
+        <Route path="/privacypolicy" element={<Privacypolicy/>} />
         <Route path="/login" element={<Login/>} />
         <Route path="/register" element={<Register/>} />
         <Route path="/reset" element={<Reset/>} />
