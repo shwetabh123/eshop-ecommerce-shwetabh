@@ -46,7 +46,8 @@ const Checkout = () => {
     // Create PaymentIntent as soon as the page loads
    // fetch("https://onlinedmart.com/create-payment-intent",{
    // fetch("https://eshop-ecommerce-shwetabh.netlify.app/create-payment-intent",{
-      fetch("https://eshop-ecommerce-shwetabh-rsv5.vercel.app/create-payment-intent",{
+    //  fetch("https://eshop-ecommerce-shwetabh-rsv5.vercel.app/create-payment-intent",{
+        fetch("/create-payment-intent",{
     //  fetch("http://localhost:4242/create-payment-intent", {
      
      method: "POST",
